@@ -1,0 +1,57 @@
+<template>
+  <lightning-card>
+    <div class="slds-hide">
+      <lightning-record-edit-form
+        onload={handleLoad}
+        record-id={recordId}
+        object-api-name={objectApiName}
+      >
+        <lightning-messages></lightning-messages>
+        <lightning-input-field field-name="Name"> </lightning-input-field>
+      </lightning-record-edit-form>
+    </div>
+    <div class="card">
+      <div class="slds-grid slds-grid_vertical-align-center">
+        <div class="slds-col slds-size_1-of-2 slds-text-align_center">
+          <div class="today">
+            <span
+              class="slds-badge slds-badge_lightest slds-var-p-bottom_medium"
+              >{city} weather</span
+            >
+            <h1 class="slds-p-top_medium">{todayTemp}°</h1>
+            <img
+              src={today_condition_icon}
+              alt={today_condition_icon}
+              style="height: 6rem"
+            />
+            <span>{today_condition_text}</span>
+          </div>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+          <div class="slds-grid slds-grid_vertical">
+            <div class="slds-col slds-align_absolute-center">
+              <h1>{tomorrowDate}</h1>
+              <img
+                src={tomorrow_condition_icon}
+                alt={tomorrow_condition_icon}
+              />
+              <h1>{tomorrowMinTemp} / {tomorrowMaxTemp }°</h1>
+            </div>
+            <div class="slds-col slds-align_absolute-center">
+              <h1>{afterTomorrowDate}</h1>
+              <img
+                src={afterTomorrow_condition_icon}
+                alt={afterTomorrow_condition_icon}
+              />
+              <h1>{afterTomorrowMinTemp} / {afterTomorrowMaxTemp }°</h1>
+            </div>
+            <div class="slds-col slds-align_absolute-center">
+              <h1>Powered by</h1>
+              <img src={twogzLogo} alt="logo" class="logo" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </lightning-card>
+</template>
